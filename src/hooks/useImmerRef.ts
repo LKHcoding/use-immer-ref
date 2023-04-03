@@ -3,6 +3,7 @@ import produce, { Draft, freeze } from 'immer';
 
 export type DraftFunction<S> = (draft: Draft<S>) => void;
 export type Updater<S> = (arg: S | DraftFunction<S>) => void;
+export type ImmerHook<S> = [S, Updater<S>, ReadOnlyRefObject<S>];
 
 const isFunction = <S>(
   setStateAction: S | DraftFunction<S>
@@ -12,11 +13,9 @@ type ReadOnlyRefObject<T> = {
   readonly current: T;
 };
 
-type UseImmerRef = {
-  <S>(initialState: S | (() => S)): [S, Updater<S>, ReadOnlyRefObject<S>];
-  <S = undefined>(): [S | undefined, Updater<S | undefined>, ReadOnlyRefObject<S | undefined>];
-};
-export const useImmerRef: UseImmerRef = <S>(initialState?: S | (() => S)) => {
+export function useImmerRef<S = any>(initialValue: S | (() => S)): ImmerHook<S>;
+export function useImmerRef<S = undefined>(): ImmerHook<S>;
+export function useImmerRef<S>(initialState?: S | (() => S)) {
   const [state, setState] = useState(freeze(initialState, true));
   const ref = useRef(state);
 
@@ -34,4 +33,4 @@ export const useImmerRef: UseImmerRef = <S>(initialState?: S | (() => S)) => {
   }, []);
 
   return [state, dispatch, ref];
-};
+}
