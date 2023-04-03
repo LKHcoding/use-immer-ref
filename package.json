@@ -1,0 +1,53 @@
+{
+  "name": "use-immer-ref",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "files": ["dist"],
+  "main": "dist/hooks/useImmerRef.es.js",
+  "module": "dist/hooks/useImmerRef.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/hooks/useImmerRef.es.js",
+      "require": "./dist/hooks/useImmerRef.umd.js"
+    }
+  },
+  "types": "dist/hooks/useImmerRef.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "rm -rf dist && tsc && vite build",
+    "preview": "vite preview",
+    "tsc-lint": "tsc --noEmit --pretty",
+    "tsc-build": "rm -rf dist && tsc --outDir ./dist",
+    "tsc-watch": "rm -rf dist && tsc -w --outDir ./dist"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "immer": ">=2.0.0"
+  },
+  "devDependencies": {
+    "immer": "^9.0.21",
+    "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "vite-plugin-dts": "^2.1.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "prettier": "^2.8.7",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0"
+  },
+  "description": "blur effect library for react-native",
+  "author": {
+    "name": "LKHcoding",
+    "email": "lkhcoding@gmail.com"
+  },
+  "keywords": [
+    "use-immer-ref",
+    "use immer ref",
+    "immer"
+  ],
+  "license": "MIT"
+}
