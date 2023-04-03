@@ -22,7 +22,7 @@ const ExampleComponent = () => {
           setState(dr => {
             dr.count = 1;
           })
-          console.log(ref.current.count) // console.log result is `1` 
+          console.log(ref.current.count) // console.log result => 1
           // ref.current will be changed to the latest value immediately
         }}>
         add count
