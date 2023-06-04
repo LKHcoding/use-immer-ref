@@ -21,7 +21,13 @@ export default defineConfig({
         useImmerRef: path.resolve(__dirname, 'src/hooks/useImmerRef.ts'),
       },
       name: 'useImmerRef',
-      fileName: (format, entryName) => `${entryName}.${format}.js`,
+      formats: ['umd', 'cjs', 'es'],
+      fileName: (format, entryName) => {
+        if (format === 'cjs') {
+          return `${entryName}.${format}`;
+        }
+        return `${entryName}.${format}.js`;
+      },
     },
     rollupOptions: {
       external: ['react', 'react-dom'],

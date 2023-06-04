@@ -1,15 +1,15 @@
 {
   "name": "use-immer-ref",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.4",
   "type": "module",
   "files": ["dist"],
-  "main": "dist/hooks/useImmerRef.umd.js",
+  "main": "dist/hooks/useImmerRef.cjs",
   "module": "dist/hooks/useImmerRef.es.js",
   "exports": {
     ".": {
       "import": "./dist/hooks/useImmerRef.es.js",
-      "require": "./dist/hooks/useImmerRef.umd.js"
+      "require": "./dist/hooks/useImmerRef.cjs"
     }
   },
   "types": "dist/hooks/useImmerRef.d.ts",
