@@ -1,7 +1,7 @@
 {
   "name": "use-immer-ref",
   "private": false,
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "files": ["dist"],
   "main": "dist/hooks/useImmerRef.cjs",
@@ -12,6 +12,7 @@
       "require": "./dist/hooks/useImmerRef.cjs"
     }
   },
+  "react-native": "dist/hooks/useImmerRef.es.js",
   "types": "dist/hooks/useImmerRef.d.ts",
   "scripts": {
     "dev": "vite",
